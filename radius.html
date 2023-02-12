@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Point {
+        constructor(x, y)
+    }
+    class Circle {
+        constructor(x,y,radius, color = 'yellow') {
+            this.center = new Point(x,y);
+            this.radius = radius;
+            this.color = color;
+        }
+        getRadius() {
+            return 2 * this.radius * Math.PI;
+        }
+        getArea() {
+            return Math.pow(this.radius, 2) * Math.PI
+        }
+        draw(context) {
+            context.beginPath();
+            context.strokeStyle = this.color;
+            context.arc(this.center.x,this.center.y,this.radius, 0 , 2 * Math.PI);
+            context.stroke();
+        }
+    };
+    
+    
+</script>
+</body>
+</html>
